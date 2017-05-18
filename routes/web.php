@@ -20,3 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/question', 'QuestionController@index');
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/question/create', 'QuestionController@create');
+    Route::post('/question', 'QuestionController@store');
+});
