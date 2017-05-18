@@ -16,7 +16,7 @@
             <div class="panel-body">
                 <ul>
                 @forelse($questions as $q)
-                   <li>{{$q->title}} ({{$q->user->name}})</li>
+                   <li>{{$q->title}} ({{$q->user->name}}) {{$q->created_at->format('d/m/Y')}}  </li>
                         <li>{{$q->content}}</li>
                 @empty
                     Nenhum resultado encontrado
